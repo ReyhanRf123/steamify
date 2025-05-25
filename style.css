@@ -1,0 +1,234 @@
+/* Redesain Futuristik Steamify */
+:root {
+  --primary: #1a1a40;
+  --secondary: #4ADEDE;
+  --accent: #80FFDB;
+  --background: #f0f9ff;
+  --glass-bg: rgba(255, 255, 255, 0.3);
+  --glass-blur: blur(12px);
+  --text: #222;
+  --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--background);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+header {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  color: var(--primary);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: var(--card-shadow);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+nav a {
+  margin: 0 1rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cta {
+  background: var(--secondary);
+  color: #000;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 5px 15px rgba(74, 222, 222, 0.3);
+  margin-top: 1.2rem;
+  display: inline-block;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(74, 222, 222, 0.4);
+}
+
+.cta.secondary {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(145deg, var(--accent), #dff);
+  flex-wrap: wrap;
+}
+
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+section {
+  padding: 3rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.features, .testimonial-wrapper, .pricing {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.pricing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.feature-card, .testimonial-card, .card {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card .cta {
+  margin-top: 2rem;
+}
+
+.feature-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.feature-list li {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: var(--card-shadow);
+}
+
+.accordion {
+  max-width: 800px;
+  margin: 2rem auto 0;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+}
+
+.accordion-button {
+  width: 100%;
+  background: var(--secondary);
+  color: black;
+  padding: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.3s;
+}
+
+.accordion-button:hover {
+  background: #3cdcdc;
+}
+
+.accordion-content {
+  background: white;
+  padding: 1rem;
+  display: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: var(--card-shadow);
+}
+
+footer {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    flex-direction: column;
+  }
+
+  .pricing, .features, .testimonial-wrapper {
+    flex-direction: column;
+  }
+}
